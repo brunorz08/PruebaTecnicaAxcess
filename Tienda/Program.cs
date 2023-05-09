@@ -70,6 +70,6 @@ while (flag)
 	}
 	catch
 	{
-		Console.WriteLine("Opción invalida");
+		Console.WriteLine("Opción inválida");
 	}
 }
