@@ -23,45 +23,53 @@ while (flag)
 
 	Console.WriteLine();
 	Console.Write("Ingrese opción:");
-	int opcion = Convert.ToInt32(Console.ReadLine());
 
-	switch (opcion)
+	try
 	{
-		case 1:
-			Console.Write("Ingrese nombre del producto:");
-			string Producto = Console.ReadLine();
-			Console.Write("Ingrese cantidad:");
-			int Cantidad = Convert.ToInt32(Console.ReadLine());
-			met.InsertarProducto(Producto, Cantidad, Tienda);
-			Console.Clear();
-			break;
+		int opcion = Convert.ToInt32(Console.ReadLine());
 
-		case 2:
-			Console.Write("Ingrese ID del producto a modificar:");
-			int ID = Convert.ToInt32(Console.ReadLine());
-			Console.Write("Ingrese cantidad a modificar del producto:");
-			int Cantidad2 = Convert.ToInt32(Console.ReadLine());
+		switch (opcion)
+		{
+			case 1:
+				Console.Write("Ingrese nombre del producto:");
+				string Producto = Console.ReadLine();
+				Console.Write("Ingrese cantidad:");
+				int Cantidad = Convert.ToInt32(Console.ReadLine());
+				met.InsertarProducto(Producto, Cantidad, Tienda);
+				Console.Clear();
+				break;
 
-			met.ActualizarProducto(Cantidad2, ID, Tienda);
-			Console.Clear();
-			break;
+			case 2:
+				Console.Write("Ingrese ID del producto a modificar:");
+				int ID = Convert.ToInt32(Console.ReadLine());
+				Console.Write("Ingrese cantidad a modificar del producto:");
+				int Cantidad2 = Convert.ToInt32(Console.ReadLine());
+
+				met.ActualizarProducto(Cantidad2, ID, Tienda);
+				Console.Clear();
+				break;
 
 
-		case 3:
-			Console.Write("Ingrese ID del producto a eliminar:");
-			int ID2 = Convert.ToInt32(Console.ReadLine());
-			met.EliminarProducto(ID2, Tienda);
-			Console.Clear();
-			break;
+			case 3:
+				Console.Write("Ingrese ID del producto a eliminar:");
+				int ID2 = Convert.ToInt32(Console.ReadLine());
+				met.EliminarProducto(ID2, Tienda);
+				Console.Clear();
+				break;
 
-		case 4:
-			Console.Clear();
-			met.ListarProductos(Tienda);
-			Console.WriteLine();
-			break;
+			case 4:
+				Console.Clear();
+				met.ListarProductos(Tienda);
+				Console.WriteLine();
+				break;
 
-		case 5:
-			flag = false;
-			break;
+			case 5:
+				flag = false;
+				break;
+		}
+	}
+	catch
+	{
+		Console.WriteLine("Opción invalida");
 	}
 }
